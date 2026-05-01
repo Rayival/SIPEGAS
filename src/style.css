@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-slate-950 text-white;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-glow {
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(249, 115, 22, 0.15),
+    transparent 40%
+  ),
+  radial-gradient(
+    circle at 80% 0%,
+    rgba(34, 197, 94, 0.1),
+    transparent 40%
+  );
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent;
+}
+
+.btn-gradient {
+  @apply bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-lg hover:shadow-orange-500/20 transition-all text-white;
+}
+
+/* Custom transitions */
+.transition-slow {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
