@@ -4,7 +4,8 @@
 
       <!-- 🔥 BRAND -->
       <div class="space-y-6">
-        <h3 class="text-3xl font-black text-orange-500">
+        <h3 class="text-3xl font-black text-orange-500 flex items-center gap-3">
+          <img src="/logo.png" alt="SIPEGAS Logo" class="w-10 h-10 rounded-full" />
           SIPEGAS
         </h3>
         <p class="text-gray-500 leading-relaxed text-sm">

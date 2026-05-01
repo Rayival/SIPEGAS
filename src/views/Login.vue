@@ -42,6 +42,9 @@ const login = async () => {
       <!-- LOGO / TITLE -->
       <div class="text-center space-y-4">
         <div class="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-2">Secure Access</div>
+        <div class="flex justify-center mb-6">
+          <img src="/logo.png" alt="SIPEGAS Logo" class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-white/10 shadow-2xl" />
+        </div>
         <h1 class="text-6xl font-black tracking-tighter text-white">SIPEGAS</h1>
         <p class="text-gray-500 font-bold tracking-widest uppercase text-[10px]">Admin Authentication</p>
       </div>

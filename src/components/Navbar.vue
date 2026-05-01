@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import ava from "../assets/img/ava.png";
+
 
 const user = ref(null);
 const isScrolled = ref(false);
@@ -33,7 +33,7 @@ const logout = async () => {
         <div class="relative">
           <div class="absolute inset-0 bg-orange-500 blur-lg opacity-0 group-hover:opacity-40 transition duration-500 rounded-full"></div>
           <img
-            :src="ava"
+            src="/logo.png"
             class="relative w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/20 shadow-xl group-hover:border-orange-500/50 transition duration-500 object-cover"
           />
         </div>
