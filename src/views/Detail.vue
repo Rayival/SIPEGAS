@@ -64,8 +64,8 @@ const getEmbedLink = (url) => {
       <div v-else-if="data" class="grid lg:grid-cols-1 gap-8 md:gap-12">
         
         <!-- HEADER CARD -->
-        <header class="bg-white/5 border border-white/10 p-8 md:p-16 rounded-[40px] relative overflow-hidden">
-          <div class="md:absolute top-0 right-0 p-0 md:p-10 mb-6 md:mb-0">
+        <header class="bg-white/5 border border-white/10 p-6 md:p-16 rounded-[40px] relative overflow-hidden">
+          <div class="md:absolute top-0 right-0 p-0 md:p-10 mb-8 md:mb-0">
              <span
                 class="px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border"
                 :class="data.status === 'selesai'

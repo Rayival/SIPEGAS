@@ -170,6 +170,10 @@ const filteredMateri = computed(() => materi.value.filter(m => m.judul.toLowerCa
       <!-- 🚀 HEADER -->
       <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         <div>
+          <router-link to="/" class="md:hidden inline-flex items-center gap-2 text-gray-500 hover:text-white transition mb-6 text-[10px] font-black uppercase tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Kembali ke Portal
+          </router-link>
           <h1 class="text-4xl md:text-6xl font-black text-orange-500 tracking-tighter">Admin Panel</h1>
           <p class="text-gray-500 font-bold uppercase text-[10px] tracking-[0.2em] mt-3">Sistem Informasi — Content Management</p>
         </div>
@@ -183,7 +187,7 @@ const filteredMateri = computed(() => materi.value.filter(m => m.judul.toLowerCa
       </header>
 
       <!-- TABS SELECTOR (Standalone Row) -->
-      <div class="flex p-2 bg-white/5 border border-white/10 rounded-[30px] w-fit mx-auto md:mx-0">
+      <div class="flex p-2 bg-white/5 border border-white/10 rounded-[30px] w-full md:w-fit overflow-x-auto no-scrollbar mx-auto md:mx-0">
         <button 
           @click="activeSection = 'tugas'" 
           :class="activeSection === 'tugas' ? 'bg-orange-500 text-white shadow-xl shadow-orange-500/20' : 'text-gray-500 hover:text-white'" 
@@ -216,10 +220,15 @@ const filteredMateri = computed(() => materi.value.filter(m => m.judul.toLowerCa
                 <textarea v-model="deskripsiTugas" placeholder="Deskripsi Singkat" class="w-full bg-black/40 border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-orange-500 transition h-24 resize-none"></textarea>
                 <div class="grid grid-cols-2 gap-4">
                   <input type="date" v-model="deadlineTugas" class="w-full bg-black/40 border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-orange-500 transition text-sm" />
-                  <select v-model="statusTugas" class="w-full bg-black/40 border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-orange-500 transition appearance-none text-sm">
-                    <option value="proses">🕒 Proses</option>
-                    <option value="selesai">✅ Selesai</option>
-                  </select>
+                  <div class="relative w-full">
+                    <select v-model="statusTugas" class="w-full bg-black/40 border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-orange-500 transition appearance-none text-sm cursor-pointer">
+                      <option value="proses">🕒 Proses</option>
+                      <option value="selesai">✅ Selesai</option>
+                    </select>
+                    <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                  </div>
                 </div>
                 <input v-model="linkSoal" placeholder="Link G-Drive Soal (PDF)" class="w-full bg-black/40 border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition text-xs font-mono" />
                 <input v-model="linkJawaban" placeholder="Link G-Drive Jawaban (PDF)" class="w-full bg-black/40 border border-white/5 rounded-2xl px-5 py-4 focus:outline-none focus:border-green-500 transition text-xs font-mono" />
@@ -256,11 +265,11 @@ const filteredMateri = computed(() => materi.value.filter(m => m.judul.toLowerCa
           <div class="space-y-4">
             <template v-if="activeSection === 'tugas'">
               <div v-for="t in filteredTugas" :key="t.id" class="bg-white/5 border border-white/5 p-6 rounded-[30px] flex items-center justify-between group hover:border-orange-500/20 transition-all duration-300">
-                <div class="flex items-center gap-6">
-                  <div class="w-1.5 h-10 rounded-full" :class="t.status === 'selesai' ? 'bg-green-500' : 'bg-yellow-500'"></div>
-                  <div>
-                    <h3 class="font-bold group-hover:text-orange-400 transition">{{ t.judul }}</h3>
-                    <p class="text-[10px] text-gray-600 font-bold uppercase tracking-widest mt-1">{{ t.deadline }} — {{ t.status }}</p>
+                <div class="flex items-center gap-4 md:gap-6 flex-1 min-w-0">
+                  <div class="w-1.5 h-10 rounded-full shrink-0" :class="t.status === 'selesai' ? 'bg-green-500' : 'bg-yellow-500'"></div>
+                  <div class="min-w-0 flex-1">
+                    <h3 class="font-bold group-hover:text-orange-400 transition truncate">{{ t.judul }}</h3>
+                    <p class="text-[10px] text-gray-600 font-bold uppercase tracking-widest mt-1 truncate">{{ t.deadline }} — {{ t.status }}</p>
                   </div>
                 </div>
                 <div class="flex gap-2">

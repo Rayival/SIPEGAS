@@ -82,9 +82,9 @@ const selesai = computed(() =>
           </div>
         </div>
 
-        <div class="relative group hidden md:block">
+        <div class="relative group block">
           <div class="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full scale-75 group-hover:scale-100 transition duration-700"></div>
-          <img :src="ava" alt="Hero" class="relative z-10 w-full max-w-lg mx-auto drop-shadow-2xl transform group-hover:-translate-y-4 transition duration-700 object-cover" />
+          <img :src="ava" alt="Hero" class="relative z-10 w-48 md:w-full max-w-lg mx-auto drop-shadow-2xl transform group-hover:-translate-y-4 transition duration-700 object-cover" />
         </div>
       </div>
     </section>
@@ -103,10 +103,6 @@ const selesai = computed(() =>
         <div class="bg-slate-900/80 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl text-center">
           <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Materi</p>
           <p class="text-3xl md:text-4xl font-black mt-2 text-blue-400">{{ materi.length }}</p>
-        </div>
-        <div class="bg-slate-900/80 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl text-center">
-          <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Semester</p>
-          <p class="text-3xl md:text-4xl font-black mt-2 text-purple-400">1</p>
         </div>
       </div>
     </div>

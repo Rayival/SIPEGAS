@@ -32,7 +32,7 @@ const login = async () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-950 flex items-center justify-center p-4 md:p-6 text-white overflow-hidden relative">
+  <div class="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 md:p-6 text-white relative pt-32 md:pt-20">
     
     <!-- GLOW EFFECTS -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full"></div>

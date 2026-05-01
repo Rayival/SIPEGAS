@@ -66,7 +66,7 @@ const logout = async () => {
           <template v-else>
             <router-link
               to="/admin"
-              class="hidden sm:block text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 hover:text-orange-400 transition mr-2">
+              class="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 hover:text-orange-400 transition mr-2">
               Admin
             </router-link>
 
